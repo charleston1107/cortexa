@@ -1,0 +1,318 @@
+/* Site header / navigation */
+:root {
+  --header-bg: linear-gradient(90deg, #f8f8f8, #d2e0ef, #ffffff);
+  --link-color: #3cafe4;
+  --link-hover: #0f0f0f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* space for fixed header so page content isn't hidden */
+body { padding-top: 72px; }
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 80px;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--header-border);
+  z-index: 1000;
+}
+
+.header-inner {
+  width: 100%;
+  margin: 0;               /* remove centering */
+  padding: 30px 40px;      /* control your left/right spacing manually */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo { display: inline-flex; align-items: left; text-decoration: none; color: inherit; }
+.logo img {
+  height: 20px;
+  width: auto;
+}
+
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; align-items: center; }
+.site-nav a { color: var(--link-color); text-decoration: none; font-weight: 500; padding: 6px 8px; display: inline-block;    transition: transform 0.25s ease, color 0.25s ease;}
+.site-nav a:hover, .site-nav a:focus { color: var(--link-hover); outline: none; transform: scale(1.15);         /* Enlarge text */
+  outline: none;}
+
+/* small screens: stack nav into a simple centered row */
+@media (max-width: 560px) {
+  .header-inner { padding: 10px 12px; }
+  .site-nav ul { gap: 14px; }
+}
+
+/* Legacy menu reset (in case old selectors still appear) */
+ul { list-style-type: none; margin: 0; padding: 0; }
+
+
+
+
+/* === HERO SECTION === */
+.hero {
+  height: 100vh;
+  background: url("../assets/images/final_render_1.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+}
+.hero-text {
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 5rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 30px 10px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+
+.appointment-btn {
+  display: inline-block;
+  padding: 0px 40px;
+  /* background-color: #f89fe000; */
+  color: #fff;
+  font-size: 2.2rem;
+  /* border-radius: 40px; */
+  text-decoration: underline;
+  transition: background 0.3s ease;
+  text-align: left;
+}
+
+.appointment-btn:hover {
+  background-color: #3cafe4;
+}
+
+/* === WHY LIVPUTER SECTION === */
+.why-livputer {
+  padding: 80px 10%;
+  background-color: #e9eff1;
+  text-align: center;
+}
+
+.why-livputer h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #1d1d1d;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+ /* background: linear-gradient(
+  180deg,
+  #59c086 30%,
+  #723ef7 45%,
+  #f89fe0 60%
+  #f89fe0 100%
+);*/
+  background: radial-gradient(circle at 50% 50%, #e6eff5, #ebe5e905),
+  radial-gradient(farthest-side at bottom left, #b7dced, #ebe5e900),
+  radial-gradient(farthest-side at top left, #e0ffee, #ebe5e978),
+  radial-gradient(farthest-side at bottom right, #a6e9c3, #ebe5e900),
+  radial-gradient(farthest-side at top right, #a6e9c3, #ebe5e929);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 30px 20px;
+  text-align: left;
+  transition: transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;  /* Stack content vertically */
+  justify-content: space-between; /* Push button to bottom */
+  padding: 30px 20px;
+  
+}
+
+.card:hover {
+  /* transform: translateY(-5px); */
+  transform: scale(1.02);
+  
+}
+
+.card-image-link {
+  display: block;
+  overflow: hidden;
+  /* border-radius: 10px; */
+  margin-bottom: 20px;
+}
+
+.card-image-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card-image-link:hover img {
+  transform: scale(1.05);
+}
+
+.card-title-link {
+  text-decoration: none;
+}
+
+.card-title-link h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #383838;
+  transition: color 0.3s ease;
+}
+
+.card-title-link:hover h3 {
+  color: #59c086;
+}
+
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #383838;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #202020;
+  margin-bottom: 20px;
+}
+
+
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/*
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+*/

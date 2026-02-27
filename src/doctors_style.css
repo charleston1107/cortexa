@@ -1,0 +1,137 @@
+/* === ABOUT SECTIONS === */
+.about {
+  padding: 40px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #e8e8e8;
+}
+
+/* Inner content wrapper */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Reverse layout for second section */
+.about-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* === Text area === */
+.about-text {
+  flex: 1;
+  max-width: 55%; /* 60% roughly for text */
+}
+
+.about-text h2 {
+  background: linear-gradient(90deg, #9fd6cc, #b7dced);
+  display: inline-block;
+  /* display: block;
+  margin: 0 0 20px 0; */
+  padding: 10px 20px; 
+  border-radius: 0px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-text h3 {
+  background-color: #3cafe4;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 0px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #000000;
+}
+
+/* === Multiple vertical images (section 1) === */
+.about-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  max-width: 50%;
+}
+
+.about-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+/* === Single image (section 2) === */
+.about-image-single {
+  flex-basis: 50%;
+}
+
+.about-image-single img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+.about-image-single h2 {
+  background-color: #b7dced;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 0px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+
+
+/* === Responsive Design === */
+@media (max-width: 900px) {
+  .about-content,
+  .about-content.reverse {
+    flex-direction: column;
+  }
+
+  .about-text,
+  .about-images,
+  .about-image-single {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .about-images {
+    flex-direction: row; /* side by side on mobile for better fit */
+  }
+}
+
+.back-button
+{
+  background-color: #b7dced;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #333;
+  text-decoration: none; /* remove underline */
+  font-weight: 500;
+}
+
+/* underline text + arrow on hover */
+.back-link:hover {
+  text-decoration: underline;
+}
