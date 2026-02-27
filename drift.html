@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>livputer-healthcare-1</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/operations_style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Home">
+          <!-- inline SVG logo (keeps project self-contained) -->
+          <img src="assets/images/CORTEXA logo gradient.png" alt="Website Logo" />
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="store.html">Cortexa Store</a></li>
+            <li><a href="operations.html">Cortexa's Operations</a></li>
+            <li><a href="drift.html">Buy Drift</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <h1 class="page-title">Buy Drift</h1>
+
+    <div class="product-section">
+
+        <!-- LEFT SIDE IMAGE -->
+        <div class="product-image">
+            <img id="mainProductImage" src="assets/images/final_render_1.jpg" alt="Drift">
+        </div>
+
+        <!-- RIGHT SIDE OPTIONS -->
+        <div class="product-options">
+            <h2>Which Drift is best for you?</h2>
+
+            <button class="option-btn active"
+                    onclick="changeProduct('assets/images/final_render_1.jpg', this)">
+            <span class="option-title">Drift</span>
+            <span class="option-price">$1999</span>
+            </button>
+
+            <button class="option-btn"
+                    onclick="changeProduct('assets/images/blue.png', this)">
+            <span class="option-title">Drift Youth</span>
+            <span class="option-price">$1599</span>
+            </button>
+
+            <button class="option-btn"
+                    onclick="changeProduct('assets/images/silver.png', this)">
+            <span class="option-title">Drift Pro</span>
+            <span class="option-price">$2999</span>
+            </button>
+
+            <a href="" class="buy-btn">Buy</a>
+            
+        </div>
+        
+    </div>
+   
+    <script>
+        function changeProduct(imagePath, clickedButton) {
+        // Change image
+        const mainImage = document.getElementById("mainProductImage");
+        mainImage.style.opacity = 0;
+
+        setTimeout(() => {
+            mainImage.src = imagePath;
+            mainImage.style.opacity = 1;
+        }, 150);
+
+        // Update active button
+        const buttons = document.querySelectorAll(".option-btn");
+        buttons.forEach(btn => btn.classList.remove("active"));
+        clickedButton.classList.add("active");
+        }
+    </script>
+    
+  </body>
+
+</html>
+
+
+<style>
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  padding: 120px 8% 60px 8%;  /* top right bottom left */
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+  font-size: 2.0rem;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #9fd6cc, #b7dced);
+  padding: 10px 20px;
+  max-width: 180px;
+}
+
+/* ===== LAYOUT ===== */
+.product-section {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* LEFT IMAGE */
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: opacity 0.3s ease;
+}
+
+/* RIGHT SIDE */
+.product-options {
+  flex: 1;
+}
+
+.product-options h2 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* BUTTONS */
+
+
+.buy-btn {
+  display: block;
+  max-width: 240px;
+  text-align: center;
+  padding: 22px;
+  margin-top: 30px;
+  background: linear-gradient(90deg, #9fd6cc, #b7dced);
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+  border-radius: 0px;
+  transition: all 0.25s ease;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(90deg, #9ae0d3, #99c8de);
+  color: black;
+  transform: scale(1.02);
+}
+
+
+.option-btn {
+  width: 100%;
+  padding: 22px 25px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+  border: 2px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: all 0.25s ease;
+}
+
+.option-btn:hover {
+  border-color: #b7dced;
+  transform: scale(1.02);
+}
+
+.option-btn.active {
+  border-color: #b7dced;
+  background: #eefaf4;
+}
+
+.option-title {
+  font-weight: 300;
+}
+
+.option-price {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .product-section {
+    flex-direction: column;
+  }
+}
